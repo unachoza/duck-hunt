@@ -44,3 +44,17 @@ html {
   background-position: center;
   background-image: url(images/shot.png);
 }
+button {
+  display: none;
+  margin-top: 850px;
+  margin-left: 50px;
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 18px;
+  background-color: rgb(238, 57, 57)
+}
+.dog{
+  display: none;
+  margin-top: 800px;
+  margin-left: 100px;
+}
