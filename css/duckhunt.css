@@ -48,16 +48,38 @@ html {
   background-image: url(../images/shot.png);
 }
 button {
-  display: none;
-  margin-top: 850px;
-  margin-left: 50px;
+  position: absolute;
+  top: 680px;
+  left: 50px;
   border-radius: 12px;
   border: 2px solid;
   padding: 18px;
   background-color: rgb(238, 57, 57);
 }
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+button::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+button:active {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+button:focus {
+  border: green;
+}
 .dog {
-  display: none;
-  margin-top: 800px;
-  margin-left: 100px;
+  position: absolute;
+  background-image: url(https://content.invisioncic.com/r268679/profile/photo-877.gif);
+  /* display: none; */
+  top: 213px;
+  right: 250px;
 }
