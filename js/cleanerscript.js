@@ -34,12 +34,7 @@ window.onload = function () {
   console.log(button);
   button.addEventListener('click', function () {
     //console.log('add a duck')
-    defaultNumDucks += 1;
-    console.log(defaultNumDucks);
-    for (let i = 0; i < defaultNumDucks; i++) {
-      createDuck();
-    }
-    return defaultNumDucks;
+    createDuck();
   });
 
   //loop creating multiple ducks

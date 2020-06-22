@@ -54,7 +54,16 @@ button {
   border-radius: 12px;
   border: 2px solid;
   padding: 18px;
-  background-color: rgb(238, 57, 57);
+  background-color: orange;
+}
+#addSpeed {
+  position: absolute;
+  top: 680px;
+  left: 200px;
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 18px;
+  background-color: hotpink;
 }
 button:hover {
   transform: translateY(-3px);
