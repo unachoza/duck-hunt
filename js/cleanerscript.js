@@ -1,6 +1,7 @@
 window.onload = function () {
   const body = document.body;
   document.getElementById('dog').classList.add('hide');
+  document.querySelector('.popup').classList.add('hide');
 
   const createDuck = () => {
     //add duck
@@ -39,9 +40,16 @@ window.onload = function () {
   const showDog = () => {
     document.getElementById('dog').classList.remove('hide');
   };
+  const showPopup = () => {
+    document.querySelector('.popup').classList.remove('hide');
+    document.querySelector('.popup').classList.add('popup-open');
+  };
   const checkForWinner = () => {
     // You won Alert (+ dog )
     let numDucks = document.getElementsByClassName('duck').length - 1;
-    if (numDucks === 0) showDog();
+    if (numDucks === 0) {
+      showDog();
+      showPopup();
+    }
   };
 };

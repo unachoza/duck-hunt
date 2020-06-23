@@ -82,65 +82,47 @@ button:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
-button:focus {
-  border: green;
-}
+
 #dog {
   position: absolute;
   background-image: url(https://content.invisioncic.com/r268679/profile/photo-877.gif);
   top: 510px;
   right: 300px;
-  /* visibility: hidden; */
 }
 .hide {
   display: none;
 }
 .popup {
-  height: 100px;
-  width: 100px;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  height: 30vh;
+  width: 30%;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-  border: solid red 6px;
-  transform: translate(-50%, -50%) scale(1);
-  transition: all 0.3s;
+  border: solid white 6px;
 }
-popup__content {
-  width: 75%;
-  background-color: white;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  display: table;
-  overflow: hidden;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.25);
-  transition: all 0.5s 0.2s;
-}
-
-popup__text {
-  /* font-size: 1.4rem;
-  margin-bottom: 4rem;
-
-  -moz-column-count: 2;
-  -moz-column-gap: 4rem; //1em = 14px;
-  -moz-column-rule: 1px solid $color-grey-light-1;
-
-  column-count: 2;
-  column-gap: 4rem; //1em = 14px;
-  column-rule: 1px solid $color-grey-light-1; */
-}
-
-/* //Open states */
-/* popup:target {
+.popup__content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
   opacity: 1;
-  visibility: visible;
 }
-*/
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
 .popup-open {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  animation: popup 3s forwards;
 }
 
 /* popup__close popup:link popup:visited {
@@ -154,6 +136,3 @@ popup__text {
   transition: all 0.2s;
   line-height: 1;
 } */
-*/ popup:hover {
-  color: blue;
-}
