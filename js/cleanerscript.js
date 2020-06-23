@@ -1,6 +1,6 @@
 let defaultSpeed = 900;
 let defaultNumDucks = 4;
-///////////////////////////////////REFACTOR THIS , changePopup(popup, changeState)
+
 const showPopup = (element) => {
   element.classList.remove('hide');
   element.classList.add('popup-open');
@@ -9,7 +9,6 @@ const hidePopup = (element) => {
   element.classList.add('hide');
   element.classList.remove('popup-open');
 };
-///////////////////////////////////REFACTOR THIS^^^^^
 
 window.onload = function () {
   const body = document.body;
