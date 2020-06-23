@@ -85,10 +85,75 @@ button:active {
 button:focus {
   border: green;
 }
-.dog {
+#dog {
   position: absolute;
   background-image: url(https://content.invisioncic.com/r268679/profile/photo-877.gif);
-  /* display: none; */
-  top: 213px;
-  right: 250px;
+  top: 510px;
+  right: 300px;
+  /* visibility: hidden; */
+}
+.hide {
+  display: none;
+}
+.popup {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  border: solid red 6px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s;
+}
+popup__content {
+  width: 75%;
+  background-color: white;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: table;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.25);
+  transition: all 0.5s 0.2s;
+}
+
+popup__text {
+  /* font-size: 1.4rem;
+  margin-bottom: 4rem;
+
+  -moz-column-count: 2;
+  -moz-column-gap: 4rem; //1em = 14px;
+  -moz-column-rule: 1px solid $color-grey-light-1;
+
+  column-count: 2;
+  column-gap: 4rem; //1em = 14px;
+  column-rule: 1px solid $color-grey-light-1; */
+}
+
+/* //Open states */
+/* popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+*/
+.popup-open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* popup__close popup:link popup:visited {
+  color: grey;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  line-height: 1;
+} */
+*/ popup:hover {
+  color: blue;
 }
