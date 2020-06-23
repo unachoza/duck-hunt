@@ -59,6 +59,9 @@ window.onload = function () {
       //loop creating multiple ducks
       createDuck();
     }
+    const startAudio = new Audio('https://res.cloudinary.com/dh41vh9dx/video/upload/v1592923996/start-round.mp3');
+    startAudio.volume = 0.1;
+    startAudio.play();
   };
 
   // add duck addDuckButton
