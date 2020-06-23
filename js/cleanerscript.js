@@ -16,7 +16,7 @@ window.onload = function () {
     };
 
     setInterval(() => duck.classList.toggle('flap'), 250); // flapping speed
-    setInterval(moveDuck, 900); //flying speed
+    setInterval(moveDuck, defaultSpeed); //flying speed
     let ducks = document.querySelectorAll('.duck');
 
     for (let i = 0; i < ducks.length; i++) {
@@ -28,14 +28,15 @@ window.onload = function () {
     }
     return duck;
   };
-
-  let defaultNumDucks = 1; //number of ducks
+  let defaultSpeed = 900;
+  let defaultNumDucks = 2; //number of ducks
   for (let i = 0; i < defaultNumDucks; i++) {
     //loop creating multiple ducks
     createDuck();
   }
   // add duck addDuckButton
   document.querySelector('.addDuck').addEventListener('click', () => createDuck());
+  document.querySelector('#playAgain').addEventListener('click', () => location.reload());
 
   const showDog = () => {
     document.getElementById('dog').classList.remove('hide');
