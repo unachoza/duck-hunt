@@ -59,8 +59,7 @@ window.onload = function () {
     let numDucks = document.getElementsByClassName('duck').length - 1;
     if (numDucks === 0) {
       showDog();
-      showPopup();
-      // setTimeout(() => showPopup(), 2000);
+      setTimeout(() => showPopup(), 2000);
     }
   };
 };
