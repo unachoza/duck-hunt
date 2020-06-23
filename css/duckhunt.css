@@ -14,6 +14,10 @@ html {
   -ms-interpolation-mode: bicubic;
   overflow: hidden;
 }
+body {
+  background-image: url(../images/topLayerBackground.png);
+  z-index: 5;
+}
 .title {
   color: red;
   font-size: 30px;
@@ -90,6 +94,16 @@ button:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
+#dogWithDeadDucks {
+  position: absolute;
+  z-index: -1;
+  width: 20%;
+  top: 520px;
+  right: 300px;
+}
+.deadDogUp {
+  animation: dogUp 1.5s forwards;
+}
 
 #dog {
   position: absolute;
@@ -126,6 +140,14 @@ button:active {
   }
   100% {
     transform: scale(1.5);
+  }
+}
+@keyframes dogUp {
+  0% {
+    top: 520px;
+  }
+  100% {
+    top: 400px;
   }
 }
 

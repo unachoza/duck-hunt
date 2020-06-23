@@ -1,10 +1,17 @@
+let defaultSpeed = 900;
+let defaultNumDucks = 2; //number of ducks
+
 window.onload = function () {
+  const startAudio = new Audio('https://res.cloudinary.com/dh41vh9dx/video/upload/v1592923996/start-round.mp3');
+  startAudio.play();
+
   const body = document.body;
-  document.getElementById('dog').classList.add('hide');
+  // document.getElementById('dogWithDeadDucks').classList.add('hide');
   document.querySelector('.popup').classList.add('hide');
 
   const createDuck = () => {
     //add duck
+    startAudio.play();
     const duck = document.createElement('div');
     duck.classList.add('duck');
     body.appendChild(duck);
@@ -28,8 +35,7 @@ window.onload = function () {
     }
     return duck;
   };
-  let defaultSpeed = 900;
-  let defaultNumDucks = 2; //number of ducks
+
   for (let i = 0; i < defaultNumDucks; i++) {
     //loop creating multiple ducks
     createDuck();
@@ -39,11 +45,14 @@ window.onload = function () {
   document.querySelector('#playAgain').addEventListener('click', () => location.reload());
 
   const showDog = () => {
-    document.getElementById('dog').classList.remove('hide');
+    // document.getElementById('dogWithDeadDucks').classList.remove('hide');
+    document.getElementById('dogWithDeadDucks').classList.add('deadDogUp');
   };
   const showPopup = () => {
+    console.log('timeout');
     document.querySelector('.popup').classList.remove('hide');
     document.querySelector('.popup').classList.add('popup-open');
+    // document.querySelector('.popup__content').classList.add('content-open');
   };
   const checkForWinner = () => {
     // You won Alert (+ dog )
@@ -51,6 +60,7 @@ window.onload = function () {
     if (numDucks === 0) {
       showDog();
       showPopup();
+      // setTimeout(() => showPopup(), 2000);
     }
   };
 };
