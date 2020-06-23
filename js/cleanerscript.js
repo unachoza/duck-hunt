@@ -13,13 +13,24 @@ const hidePopup = (element) => {
 
 window.onload = function () {
   const body = document.body;
-  document.querySelector('#start-popup').classList.add('hide'); //hiding popups
-  document.querySelector('#end-popup').classList.add('hide'); //hiding popups
-
+  const removeElement = (element, removing) => {
+    document.querySelector(element).classList.remove(removing);
+  };
+  const addElement = (element, adding) => {
+    document.querySelector(element).classList.add(adding);
+  };
+  //opening sequence
+  addElement('#start-popup', 'hide');
+  addElement('#end-popup', 'hide');
   showPopup(document.querySelector('#start-popup'));
 
+  //giving buttons functionality
   document.querySelector('#start-button').addEventListener('click', () => {
     makeTheDucksAndStartTheGame();
+  });
+  document.querySelector('.addDuck').addEventListener('click', () => createDuck());
+  document.querySelector('#playAgain-button').addEventListener('click', () => {
+    makeTheDucksAndStartTheGame(removeElement('#dogWithDeadDucks', 'deadDogUp'));
   });
 
   const createDuck = () => {
@@ -45,8 +56,9 @@ window.onload = function () {
     return duck;
   };
 
-  const makeTheDucksAndStartTheGame = () => {
+  const makeTheDucksAndStartTheGame = (hideDogCB = null) => {
     hidePopup(document.querySelector('#start-popup'));
+    hidePopup(document.querySelector('#end-popup'));
     const startAudio = new Audio('https://res.cloudinary.com/dh41vh9dx/video/upload/v1592923996/start-round.mp3');
     startAudio.volume = 0.1;
     startAudio.play();
@@ -55,21 +67,14 @@ window.onload = function () {
         createDuck();
       }
     }, 2000);
+    hideDogCB;
   };
 
-  document.querySelector('.addDuck').addEventListener('click', () => createDuck());
-  document.querySelector('#playAgain-button').addEventListener('click', () => {
-    hidePopup(document.querySelector('#end-popup'));
-    makeTheDucksAndStartTheGame();
-    document.getElementById('dogWithDeadDucks').classList.remove('deadDogUp');
-  });
-
   const showDog = () => {
-    document.getElementById('dogWithDeadDucks').classList.add('deadDogUp');
+    addElement('#dogWithDeadDucks', 'deadDogUp');
   };
 
   const checkForWinner = () => {
-    // You won Alert (+ dog )
     let numDucks = document.getElementsByClassName('duck').length - 1;
     if (numDucks === 0) {
       showDog();
