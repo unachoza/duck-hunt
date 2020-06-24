@@ -129,6 +129,7 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   color: white;
   font-size: 20px;
@@ -216,5 +217,27 @@ button:active {
   }
   button {
     top: 380px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .popup__content {
+    font-size: 16px;
+  }
+  .popup {
+    width: 25%;
+    left: 37%;
+  }
+  .playAgain {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .popup__content {
+    font-size: 14px;
+  }
+  .playAgain {
+    padding: 10px;
+    font-size: 8px;
   }
 }
