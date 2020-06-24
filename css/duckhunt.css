@@ -3,7 +3,7 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-image: url(../compressedImages/background.png);
+  background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/background.png');
   background-size: cover;
   background-position: center;
   image-rendering: optimizeSpeed;
@@ -15,16 +15,12 @@ html {
   overflow: hidden;
 }
 body {
-  background-image: url(../compressedImages/topLayerBackground.png);
+  background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/topLayerBackground.png');
   z-index: 5;
-}
-.title {
-  color: red;
-  font-size: 30px;
 }
 .duck {
   position: absolute;
-  background-image: url(../compressedImages/duckhuntsprits.png);
+  background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/duckhuntsprits.png');
   background-position: -100px -160px;
   width: 110px;
   height: 115px;
@@ -49,7 +45,7 @@ body {
 }
 .duck.shot {
   background-position: center;
-  background-image: url(../compressedImages/shot.png);
+  background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/shot.png');
 }
 button {
   position: absolute;
@@ -59,15 +55,6 @@ button {
   border: 2px solid;
   padding: 18px;
   background-color: orange;
-}
-#addSpeed {
-  position: absolute;
-  top: 680px;
-  left: 200px;
-  border-radius: 12px;
-  border: 2px solid;
-  padding: 18px;
-  background-color: hotpink;
 }
 .playAgain {
   position: static;
