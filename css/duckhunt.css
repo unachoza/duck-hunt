@@ -30,9 +30,6 @@ button {
 }
 .playAgain {
   position: static;
-  border-radius: 12px;
-  border: 2px solid;
-  padding: 18px;
   background-color: greenyellow;
   margin-top: 10px;
 }
@@ -194,26 +191,6 @@ button:active {
   }
 }
 
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  body {
-    background: url(https://res.cloudinary.com/dh41vh9dx/image/upload/v1545059996/Landscape-Mode.png) no-repeat center
-      center fixed;
-    background-size: contain;
-    background-color: black;
-    background-size: 80%;
-    z-index: 100;
-  }
-
-  .duck {
-    display: none;
-  }
-  button {
-    display: none;
-  }
-  .popup {
-    display: none;
-  }
-}
 @media (max-device-width: 850px) {
   #dogWithDeadDucks {
     position: absolute;
