@@ -18,6 +18,91 @@ body {
   background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/topLayerBackground.png');
   z-index: 5;
 }
+
+button {
+  position: absolute;
+  top: 680px;
+  left: 50px;
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 18px;
+  background-color: orange;
+}
+.playAgain {
+  position: static;
+  border-radius: 12px;
+  border: 2px solid;
+  padding: 18px;
+  background-color: greenyellow;
+  margin-top: 10px;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+#dogWithDeadDucks {
+  position: absolute;
+  z-index: -1;
+  width: 20%;
+  top: 540px;
+  right: 300px;
+}
+
+.hide {
+  display: none;
+}
+.popup {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  height: 30vh;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: solid white 6px;
+}
+.popup__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  opacity: 1;
+}
+.popup-open {
+  opacity: 1;
+  animation: popup 3s forwards;
+}
+/* //// CRITICAL Media Queries /////  */
+@media screen and (max-height: 500px) {
+  .popup__content {
+    font-size: 16px;
+  }
+  .popup {
+    width: 25%;
+    left: 37%;
+  }
+  .playAgain {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .popup__content {
+    font-size: 14px;
+  }
+  .playAgain {
+    padding: 10px;
+    font-size: 8px;
+  }
+}
+
+/* /////////NONE-CRITICAL RENDER CSS////////  */
 .duck {
   position: absolute;
   background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/duckhuntsprits.png');
@@ -47,28 +132,7 @@ body {
   background-position: center;
   background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/shot.png');
 }
-button {
-  position: absolute;
-  top: 680px;
-  left: 50px;
-  border-radius: 12px;
-  border: 2px solid;
-  padding: 18px;
-  background-color: orange;
-}
-.playAgain {
-  position: static;
-  border-radius: 12px;
-  border: 2px solid;
-  padding: 18px;
-  background-color: greenyellow;
-  margin-top: 10px;
-}
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
-}
+
 button::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
@@ -81,47 +145,10 @@ button:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
-#dogWithDeadDucks {
-  position: absolute;
-  z-index: -1;
-  width: 20%;
-  top: 540px;
-  right: 300px;
-}
 .deadDogUp {
   animation: dogUp 1.5s forwards;
 }
 
-#dog {
-  position: absolute;
-  background-image: url(https://content.invisioncic.com/r268679/profile/photo-877.gif);
-  top: 510px;
-  right: 300px;
-}
-.hide {
-  display: none;
-}
-.popup {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  height: 30vh;
-  width: 30%;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: solid white 6px;
-}
-.popup__content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  color: white;
-  font-size: 20px;
-  opacity: 1;
-}
 @keyframes popup {
   0% {
     transform: scale(0);
@@ -145,11 +172,6 @@ button:active {
   100% {
     top: 210px;
   }
-}
-
-.popup-open {
-  opacity: 1;
-  animation: popup 3s forwards;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -204,27 +226,5 @@ button:active {
   }
   button {
     top: 380px;
-  }
-}
-@media screen and (max-height: 500px) {
-  .popup__content {
-    font-size: 16px;
-  }
-  .popup {
-    width: 25%;
-    left: 37%;
-  }
-  .playAgain {
-    padding: 10px;
-    font-size: 12px;
-  }
-}
-@media screen and (max-height: 400px) {
-  .popup__content {
-    font-size: 14px;
-  }
-  .playAgain {
-    padding: 10px;
-    font-size: 8px;
   }
 }
