@@ -1,4 +1,4 @@
-let defaultSpeed = 900;
+let defaultSpeed = 1000;
 let defaultNumDucks = 4;
 
 const showPopup = (element) => {
@@ -36,12 +36,14 @@ window.onload = function () {
     const duck = document.createElement('div');
     duck.classList.add('duck');
     body.appendChild(duck);
+
     const moveDuck = () => {
+      console.log(window.innerWidth, 'is the width', window.innerHeight, 'is the heigh');
       //make duck fly
       duck.style.left = Math.random() * window.innerWidth + 'px';
       duck.style.top = Math.random() * window.innerHeight + 'px';
     };
-    setInterval(() => duck.classList.toggle('flap'), 250); // flapping speed
+    setInterval(() => duck.classList.toggle('flap'), 200); // flapping speed
     setInterval(moveDuck, defaultSpeed); //flying speed
 
     let ducks = document.querySelectorAll('.duck'); //all ducks

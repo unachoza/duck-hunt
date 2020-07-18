@@ -103,7 +103,8 @@ button:hover {
 .duck {
   position: absolute;
   background-image: url('https://res.cloudinary.com/dh41vh9dx/image/upload/v1592969171/duckhuntsprits.png');
-  background-position: -100px -160px;
+  background-position: -200px -560px;
+  border: solid red 3px;
   width: 110px;
   height: 115px;
   /* GIVE THE LEFT AND TOP POSITION OF DUCK HAVE A TRANSITION EFFECT
@@ -121,9 +122,11 @@ button:hover {
 }
 .duck {
   background-position: -100px -160px;
+  border: solid blue 3px;
 }
 .duck.flap {
   background-position: -430px -160px;
+  border: solid green 3px;
 }
 .duck.shot {
   background-position: center;
